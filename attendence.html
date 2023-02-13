@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img.background {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+      filter: blur(5px);
+      }
+        .d1{
+            font-style: italic;
+            margin-top: 10px;
+            margin-right:500px;
+            margin-left:500px;
+            border-radius: 5%;
+            background-color: beige;
+            box-shadow: 5px 5px;
+            border:2px solid rgb(199, 165, 165);
+        }img{
+            border-radius: 5%;
+            margin-left:auto;
+            background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg");
+            box-shadow: 5px 5px;
+        }
+        .img1{
+            border-radius: 5%;
+            margin-left:1000px;
+            background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg");
+            box-shadow: 5px 5px;
+        }.p1{
+            margin-right:500px;
+            margin-left:500px;
+            border-radius: 5%;
+            background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxNbK0yXkK5CSiKh9pq_ud_Qv3C9YSifccQDu2XrIrGtrZODxzyCShXBy3eJzt06rnOXs&usqp=CAU");
+            box-shadow: 5px 5px;
+            border:2px solid rgb(49, 36, 36);
+                   }
+        .s{ 
+	        width: 150px;
+	        height: 50px;
+	        font-size: 20px;
+	        margin: 10px;
+	        padding: 10px;
+	        background-color: #4CAF50; /* Green */
+	        color: white;
+	        border: none;
+	        border-radius: 10px;
+	        cursor: pointer;
+           }marquee{
+            background-color: rgb(230, 225, 213);
+            text-shadow: black;
+            box-shadow: #4CAF50;
+            margin-left: 180px;
+            margin-right: 200px;
+           }
+           
+           
+    </style>
+</head>
+
+<body>
+    <marquee>Savvetha School of Engineering</marquee>
+    <img class="background" src="https://images.squarespace-cdn.com/content/v1/590ecdedc534a56c75a1aab7/1523505602806-BTTB4XOUAQIAYY6NWN3W/2018-04-09-PHOTO-00000523+2.jpg" alt="Aleq">
+    <img src="https://static1.squarespace.com/static/590ecdedc534a56c75a1aab7/t/63be616b613b264b86a70058/1675160847555/" width="100" height="100">
+    <img class="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkUBRtD6TYH3y6En7b6EjYh7Gq1rFsHM06JOa1PQ7l_CnRADdKwMlHdnuIVdLpz1XVtgQ&usqp=CAU"width="100" height="100">
+    <p class="p1">Attendence Check Form</p>
+    <div class="d1">
+    <form>
+        <label for="no of days" >Enter the total number of days</label><br>
+          <input type="text" id="days" placeholder="Total days"><br>
+          <label for="no of present" >No of days present</label><br>
+          <input type="text"id="absent" placeholder="total present days"><br>
+          <label for="no of absents" >No of days going to put absent</label><br>
+          <input type="text"id="absen" placeholder="upcoming absent"><br>
+          <button class="s" type="button" onclick="attendence()">Submit</button>
+
+    </form>
+    <p id="tipAmount"></p>
+    </div>
+    <marquee img src=""></marquee>
+    <script>
+        function attendence() {
+            var q=document.getElementById("days").value;
+            var w=document.getElementById("absent").value;
+            var i=document.getElementById("absen").value;
+            a = q+i;
+            b = w+i;
+            c = b * 100;
+            d = c / a;
+            r=Math.trunc(d)
+            if(q==null || q=="")
+            {
+                alert("The 1st colum cannot be empty");
+            }else if(w==null || w==""){
+                alert("The 2nd colum cannot be empty");
+
+            }else if(i==null || i==""){
+                alert("The 3rd colum cannot be empty");
+            }
+            if(d>=r+(0.5)){
+                document.getElementById("tipAmount").innerHTML = "The attendence after "+i+" days is "+(r+1)+"%";
+            }else{
+                document.getElementById("tipAmount").innerHTML = "The attendence after "+i+" days is "+(r)+"%";
+            }
+            
+            }
+    </script>
+</body> 
+</html>
